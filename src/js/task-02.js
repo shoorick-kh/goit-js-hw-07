@@ -14,5 +14,4 @@ const items = ingredients.map((ingredient) => {
   itemRef.textContent = ingredient;
   return itemRef;
 });
-console.log(items);
 listRef.append(...items);
