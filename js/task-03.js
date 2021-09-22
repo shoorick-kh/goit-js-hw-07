@@ -15,11 +15,11 @@ const images = [
 
 const listRef = document.querySelector("#gallery");
 
-const items = images.map((image) => {
-  // const item = document.createElement("li");
-  listRef.insertAdjacentHTML(
-    "beforeend",
-    `<li><img src="${image.url}" alt="${image.alt}" width=480></li>`
-  );
-});
+const items = images.reduce(
+  (acc, image) =>
+    acc + `<li><img src="${image.url}" alt="${image.alt}" width=480></li>`,
+  ""
+);
+// console.log(items);
+listRef.insertAdjacentHTML("beforeend", items);
 listRef.classList.add("gallery");
